@@ -124,15 +124,15 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="legende">
       <div class="legends">
         <div class="legende-item">
-          <div class="legende-siege" style="background-image: url('/Cinema-Pathe/assets/images/pictos/siege-vert.png');"></div>
+          <div class="legende-siege" style="background-image: url('../assets/images/pictos/siege-vert.png');"></div>
           <span>Mes places</span>
         </div>
         <div class="legende-item">
-          <div class="legende-siege" style="background-image: url('/Cinema-Pathe/assets/images/pictos/siege-jaune.png');"></div>
+          <div class="legende-siege" style="background-image: url('../assets/images/pictos/siege-jaune.png');"></div>
           <span>Places libres</span>
         </div>
         <div class="legende-item">
-          <div class="legende-siege" style="background-image: url('/Cinema-Pathe/assets/images/pictos/siege-gris.png');"></div>
+          <div class="legende-siege" style="background-image: url('../assets/images/pictos/siege-gris.png');"></div>
           <span>Places réservées</span>
         </div>
       </div>
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <div class="selection-info">
       <button class="confirm-btn" id="confirmerBtn" disabled>
-        Réserver mes places <img src="/Cinema-Pathe/assets/images/pictos/fleche-droite.png" class="fleche-droite" alt="flèche" />
+        Réserver mes places <img src="../assets/images/pictos/fleche-droite.png" class="fleche-droite" alt="flèche" />
       </button>
     </div>
   `;
