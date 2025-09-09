@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="legende">
       <div class="legends">
         <div class="legende-item">
-          <div class="legende-siege" style="background-image: url('../../assets/images/pictos/siege-vert.png');"></div>
+          <div class="legende-siege" style="background-image: url('../assets/images/pictos/siege-vert.png');"></div>
           <span>Mes places</span>
         </div>
         <div class="legende-item">
