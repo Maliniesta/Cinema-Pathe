@@ -1,7 +1,7 @@
 // =====================================================
 // 1. Chargement du fichier JSON contenant la liste des films
 // =====================================================
-fetch("../JSON/films.json")
+fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Erreur lors du chargement du fichier JSON");
@@ -29,18 +29,18 @@ fetch("../JSON/films.json")
         // --- 3.1 Ajout d’un tag (nouveau ou frisson) ---
         let tagImage = "";
         if (film.mention_frisson) {
-          tagImage = `<img src="assets/images/pictos/frisson.png" alt="Frisson" class="tag-image">`;
+          tagImage = `<img src="../assets/images/pictos/frisson.png" alt="Frisson" class="tag-image">`;
         } else if (film.nouveau) {
-          tagImage = `<img src="assets/images/pictos/nouveau.jpg" alt="Nouveau" class="tag-image">`;
+          tagImage = `<img src="../assets/images/pictos/nouveau.jpg" alt="Nouveau" class="tag-image">`;
         }
 
         // --- 3.2 Ajout des pictos (-12 ans, violence, etc.) ---
         let pictos = "";
         if (film.âge_minimum >= 12) {
-          pictos += `<img src="assets/images/pictos/-12ans.png" alt="-12" class="pictos">`;
+          pictos += `<img src="../assets/images/pictos/-12ans.png" alt="-12" class="pictos">`;
         }
         if (film.avertissement_violence) {
-          pictos += `<img src="assets/images/pictos/violence.jpg" alt="Violence" class="pictos">`;
+          pictos += `<img src="../assets/images/pictos/violence.jpg" alt="Violence" class="pictos">`;
         }
 
         // --- 3.3 Calcul de la durée affichée ---
@@ -65,7 +65,7 @@ fetch("../JSON/films.json")
 
           // Accessibilité handicap
           let access = seance.handicap
-            ? '<img src="assets/images/pictos/w_handicap.png" alt="Handicapé" class="w-handicap">'
+            ? '<img src="../assets/images/pictos/w_handicap.png" alt="Handicapé" class="w-handicap">'
             : "";
 
           // Lien séance (cliquable vers places.html)
