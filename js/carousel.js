@@ -1,11 +1,11 @@
 // Liste des images
 const images = [
-  "../assets/images/films-en-vedette/best_seller.jpg",
-  "../assets/images/films-en-vedette/naked_gun.jpg",
-  "../assets/images/films-en-vedette/karate_kid.jpg",
-  "../assets/images/films-en-vedette/nobody2.jpg",
-  "../assets/images/films-en-vedette/evanouis.jpg",
-  "../assets/images/films-en-vedette/wishy.jpg",
+  "assets/images/films-en-vedette/best_seller.jpg",
+  "assets/images/films-en-vedette/naked_gun.jpg",
+  "assets/images/films-en-vedette/karate_kid.jpg",
+  "assets/images/films-en-vedette/nobody2.jpg",
+  "assets/images/films-en-vedette/evanouis.jpg",
+  "assets/images/films-en-vedette/wishy.jpg",
 ];
 
 let idx = 0;
