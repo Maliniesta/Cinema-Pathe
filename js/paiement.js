@@ -52,13 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (seanceInfo) {
     seanceInfo.innerHTML = `Séance <div class="seance-details">${data.horaire} ${data.version}<div class="film-fin">Fin prévue à ${data.finPrevue}</div></div>`;
   }
-  if (infosSalleHandicap) {
-    infosSalleHandicap.innerHTML = `<p>Salle : ${data.salle}</p>${
-      data.handicap
-        ? `<img src=""https://maliniesta.github.io/Cinema-Pathe/assets/images/pictos/w_handicap.png" alt="Accès handicapé" class="b-handicap">`
-        : ""
-    }`;
-  }
+
   if (siegesListe)
     siegesListe.textContent = data.sieges.map((s) => s.label).join(", ");
 
