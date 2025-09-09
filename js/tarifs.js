@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>Salle : ${data.salle}</p>
       ${
         data.handicap
-          ? `<img src="/assets/images/pictos/w_handicap.png" alt="Accès handicapé" class="b-handicap">`
+          ? `<img src="../assets/images/pictos/w_handicap.png" alt="Accès handicapé" class="b-handicap">`
           : ""
       }
     `;
