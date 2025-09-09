@@ -1,0 +1,92 @@
+.films-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin: 3rem 0 3rem 0;
+}
+
+.film-card {
+  color: #ffffff;
+}
+
+.film-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.film-details {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.film-affiche {
+  display: flex;
+  gap: 1rem;
+}
+
+.film-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.genre {
+  font-size: 0.75rem;
+  color: #61646a;
+}
+
+.duree {
+  font-size: 0.75rem;
+  color: #61646a;
+}
+
+.seance-container {
+  display: flex;
+  width: 100%;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.seance {
+  background-color: #202020;
+  width: 12%;
+  height: 8rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.seance:hover {
+  transform: scale(1.1);
+}
+
+.seance-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.horaire {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.version {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #61646a;
+}
+
+.qualite {
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+@media screen and (min-width: 1900px) {
+  .seance {
+    height: 10rem;
+  }
+}

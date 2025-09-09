@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ticket de réservation Pathé Lyon Bellecour</title>
+
+    <!-- Description pour moteurs de recherche -->
+    <meta
+      name="description"
+      content="Consultez le récapitulatif de votre réservation cinéma Pathé Lyon Bellecour : film, séance, salle, sièges et total payé."
+    />
+
+    <!-- Mots-clés SEO (optionnel mais peut aider) -->
+    <meta
+      name="keywords"
+      content="cinéma, Pathé, réservation, ticket, film, séance, Lyon Bellecour, sièges, tarif, snack"
+    />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/images/logo/logo_pathe_white.png"
+    />
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/pages/ticket.css" />
+  </head>
+  <body>
+    <div class="container-fixed">
+      <header>
+        <nav class="navbar">
+          <div class="nav-left">
+            <ul>
+              <li><a href="../index.html">Accueil</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="catalogue.html">Choisir une séance</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="places.html">Vos places</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="tarifs.html">Tarifs</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="snacks.html">Snacks</a></li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <button class="secondary-btn">
+              <a href="../index.html">
+                <img
+                  src="/assets/images/pictos/fleche.png"
+                  class="arrow-left"
+                  alt="Retour"
+                />
+                Accueil
+              </a>
+            </button>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <main class="reservation-page">
+      <section class="film-summary" aria-label="Résumé du film réservé">
+        <div class="film-overlay">
+          <img
+            src="/assets/images/logo/logo_pathe_white.png"
+            alt="Logo Pathé"
+            class="logo-white"
+          />
+          <img class="film-image" src="" alt="Affiche du film réservé" />
+          <div class="change-film-container">
+            <h3 class="film-title"></h3>
+          </div>
+          <p class="seance-info"></p>
+        </div>
+      </section>
+
+      <section
+        class="salle-container"
+        aria-label="Récapitulatif de votre ticket"
+      >
+        <h4 class="ticket-title">Merci pour votre réservation</h4>
+        <div class="ticket-container">
+          <div class="ticket-body">
+            <div class="cinema-title">Pathé Lyon Bellecour</div>
+            <div class="ticket-details">
+              <div class="film-title" id="filmTitle">Chargement...</div>
+              <div class="ticket-row">
+                <span>Séance</span>
+                <strong id="seanceHoraire">--:-- VF</strong>
+              </div>
+              <div class="ticket-row">
+                <span>Salle</span>
+                <strong id="salleName">--</strong>
+              </div>
+              <div class="ticket-row">
+                <span>Siège</span>
+                <strong id="siegesInfo">--</strong>
+              </div>
+
+              <div class="price-row">
+                <div class="ticket-row">
+                  <span>Total</span>
+                  <strong id="totalPrice">--,-- €</strong>
+                </div>
+              </div>
+            </div>
+            <div class="qr-section">
+              <img
+                src="../assets/images/pictos/qr-code.png"
+                class="qr-code"
+                alt="QR code du ticket"
+              />
+            </div>
+          </div>
+
+          <div class="footer-message">
+            L'équipe de votre cinéma Pathé<br />
+            vous souhaite une bonne séance !
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/ticket.js"></script>
+  </body>
+</html>

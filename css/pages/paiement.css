@@ -1,0 +1,130 @@
+.salle-container {
+  background-color: #f0f0f0;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.payment-form {
+  background: #ffffff;
+  border-radius: 21px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-title {
+  margin-bottom: 1rem;
+}
+
+.card-section {
+  border: 3px solid #feb91e;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-label {
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-icons {
+  display: flex;
+  gap: 1.56rem;
+}
+
+.card-icon {
+  width: 2.5rem;
+  height: 1.57rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group label {
+  display: block;
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  height: 2rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d1d6;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: white;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007aff;
+}
+
+.google-pay-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #d1d1d6;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+}
+
+.google-pay-section:hover {
+  background: #f9f9f9;
+}
+
+.google-pay-label {
+  color: #1d1d1f;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.google-pay-logo {
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 0.1rem;
+}
+
+input::placeholder {
+  color: #86868b;
+}
+
+@media screen and (min-width: 1900px) {
+  .salle-container {
+    gap: 8rem;
+  }
+}

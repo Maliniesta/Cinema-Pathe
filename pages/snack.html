@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choix de Snacks - Cinéma Pathé</title>
+
+    <!-- Description pour le SEO -->
+    <meta
+      name="description"
+      content="Choisissez vos snacks pour compléter votre séance de cinéma au Cinéma Pathé. Popcorn, boissons, et encas disponibles. Réservez vos menus directement en ligne."
+    />
+
+    <!-- Mots-clés -->
+    <meta
+      name="keywords"
+      content="cinéma, Pathé, snacks, popcorn, boissons, encas, réservation en ligne"
+    />
+
+    <!-- Auteur -->
+    <meta name="author" content="Cinéma Pathé" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="/assets/images/logo/logo_pathe_white.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/pages/snack.css" />
+  </head>
+  <body>
+    <div class="container-fixed">
+      <header>
+        <nav class="navbar">
+          <div class="nav-left">
+            <ul>
+              <li><a href="../index.html">Accueil</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="catalogue.html">Choisir une séance</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="places.html">Vos places</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="tarifs.html">Tarifs</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="snacks.html">Snacks</a></li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <button class="secondary-btn">
+              <a href="tarifs.html">
+                <img
+                  src="/assets/images/pictos/fleche.png"
+                  class="arrow-left"
+                  alt="Retour"
+                />
+                Retour
+              </a>
+            </button>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <main class="reservation-page">
+      <!-- Colonne gauche - Film -->
+      <section class="film-summary">
+        <div class="film-overlay">
+          <img
+            src="/assets/images/logo/logo_pathe_white.png"
+            alt="Logo Pathé"
+            class="logo-white"
+          />
+          <img class="film-image" src="" alt="Affiche du film" />
+          <div class="change-film-container">
+            <h3 class="film-title"></h3>
+          </div>
+          <p class="seance-info"></p>
+        </div>
+      </section>
+
+      <!-- Colonne droite - Snacks -->
+      <section class="salle-container">
+        <div class="infos-salle-handicap"></div>
+        <h4 class="tarifs-title">Profitez encore plus de votre séance</h4>
+
+        <div class="snack-container" aria-label="Sélection de snacks">
+          <!-- Les snacks seront injectés par JS -->
+        </div>
+
+        <!-- Récapitulatif -->
+        <div class="resume">
+          <div class="recap-section">
+            <h5>Mes snacks</h5>
+            <div class="recap-liste">
+              <!-- Généré par JS -->
+            </div>
+          </div>
+
+          <!-- Total et continuer -->
+          <div class="total-zone">
+            <div class="total-info">
+              <span>Total à régler</span>
+              <span class="total-prix">0.00€</span>
+            </div>
+            <button class="continue-btn" disabled>
+              Continuer
+              <img
+                src="/assets/images/pictos/fleche-droite.png"
+                alt="suivant"
+                class="fleche-droite"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/snack.js"></script>
+  </body>
+</html>

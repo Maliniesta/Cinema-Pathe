@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Heeboo-regular";
+  src: url("/assets/fonts/Heebo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Heeboo-bold";
+  src: url("/assets/fonts/Heebo-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Heeboo-extrabold";
+  src: url("/assets/fonts/Heebo-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Hepta-bold";
+  src: url("/assets/fonts/HeptaSlab-Bold.ttf");
+}
+body {
+  font-family: "Heeboo-regular";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-fixed {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.infos-salle-handicap {
+  position: fixed;
+  top: 2.3rem;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1c2129;
+}
+
+.reservation-page {
+  display: flex;
+  height: 100vh;
+}
+
+.salle-container {
+  flex: 2;
+  background: #ffffff;
+  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  overflow: hidden;
+  position: relative;
+}
+
+@media screen and (min-width: 1900px) {
+  .salle-container {
+    gap: 4rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .infos-salle-handicap {
+    position: fixed;
+    top: 50%;
+    left: 10%;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: "Heeboo-regular";
+    src: url("/assets/fonts/Heebo-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Heeboo-bold";
+    src: url("/assets/fonts/Heebo-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "Heeboo-extrabold";
+    src: url("/assets/fonts/Heebo-ExtraBold.ttf");
+  }
+
+  @font-face {
+    font-family: "Hepta-bold";
+    src: url("/assets/fonts/HeptaSlab-Bold.ttf");
+  }
+  body {
+    font-family: "Heeboo-regular";
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .container-fixed {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .infos-salle-handicap {
+    position: fixed;
+    top: 2.3rem;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1c2129;
+  }
+
+  .reservation-page {
+    display: flex;
+    height: 100vh;
+  }
+
+  .salle-container {
+    flex: 2;
+    background: #ffffff;
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    overflow: hidden;
+    position: relative;
+  }
+
+  @media screen and (min-width: 1900px) {
+    .salle-container {
+      gap: 4rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    .infos-salle-handicap {
+      position: fixed;
+      top: 50%;
+      left: 10%;
+    }
+    .reservation-page {
+      flex-direction: column; /* vertical */
+      height: 100vh; /* prend toute la hauteur disponible */
+    }
+
+    .film-summary {
+      flex: 3 !important;
+      width: 100%;
+      min-height: 50vh;
+    }
+
+    .salle-container {
+      flex: 2 !important;
+      width: 100%;
+      padding-top: 0rem;
+    }
+  }
+}

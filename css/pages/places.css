@@ -1,0 +1,97 @@
+/* 🌍 Base */
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 🪑 Zone de sélection */
+.salle-container {
+  flex: 2;
+  background: #ffffff;
+  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  overflow: hidden;
+}
+
+.salle-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 🖥️ Écran */
+.ecran {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3rem;
+  font-family: "Heeboo-bold";
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #daa846;
+}
+
+.ecran::before,
+.ecran::after {
+  content: "";
+  flex: 1;
+  border-bottom: 10px solid #daa846;
+  margin: 0 2.5rem;
+}
+
+.ecran span {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+/* 🧾 Légende */
+.legende {
+  display: flex;
+  justify-content: space-around;
+  margin: 4.5rem 0rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.legende-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ✅ Confirmation */
+.confirmation-zone {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+}
+
+.selection-info {
+  color: #374151;
+  font-weight: 600;
+}
+
+.selection-info .count {
+  color: #059669;
+  font-size: 1.1rem;
+}
+
+.legends {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 1900px) {
+  .legende {
+    margin: 5rem 0rem;
+  }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choisir vos places - Cinéma Pathé</title>
+    <meta
+      name="description"
+      content="Sélectionnez vos places pour votre film préféré dans votre cinéma Pathé. Choisissez votre siège et profitez de votre séance."
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/pages/places.css" />
+    <link
+      rel="icon"
+      href="/assets/images/logo/logo_pathe_white.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="container-fixed">
+      <header>
+        <nav class="navbar" aria-label="Navigation principale">
+          <div class="nav-left">
+            <ul>
+              <li><a href="../index.html">Accueil</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="catalogue.html">Choisir une séance</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="places.html">Vos places </a></li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <button class="secondary-btn">
+              <a href="catalogue.html">
+                <img
+                  src="/assets/images/pictos/fleche.png"
+                  class="arrow-left"
+                  alt="Retour"
+                />Retour
+              </a>
+            </button>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <main class="reservation-page" aria-label="Sélection des places de cinéma">
+      <!-- Colonne gauche -->
+      <section class="film-summary" aria-label="Résumé du film">
+        <div class="film-overlay">
+          <img
+            src="/assets/images/logo/logo_pathe_white.png"
+            alt="Logo Pathé"
+            class="logo-white"
+          />
+          <img class="film-image" src="" alt="Affiche du film" />
+          <div class="change-film-container">
+            <h3 class="film-title"></h3>
+            <a href="catalogue.html" class="change-btn">Changer de film</a>
+          </div>
+          <p class="seance-info"></p>
+        </div>
+      </section>
+
+      <!-- Colonne droite -->
+      <section class="salle-container" aria-label="Plan de la salle">
+        <div class="infos-salle-handicap"></div>
+        <h4 class="salle-title">Sélectionnez vos places</h4>
+        <div class="sieges">
+          <!-- Chaque ligne -->
+          <div class="column">
+            <div class="seat available"></div>
+            <div class="seat available"></div>
+            <div class="seat reserved"></div>
+            <div class="seat available"></div>
+          </div>
+          <div class="column">
+            <div class="seat available"></div>
+            <div class="seat reserved"></div>
+            <div class="seat available"></div>
+            <div class="seat available"></div>
+          </div>
+          <div class="column">
+            <div class="seat available"></div>
+            <div class="seat reserved"></div>
+            <div class="seat available"></div>
+            <div class="seat available"></div>
+          </div>
+        </div>
+        <div class="ecran">Ecran</div>
+      </section>
+    </main>
+
+    <script src="/js/places.js"></script>
+  </body>
+</html>

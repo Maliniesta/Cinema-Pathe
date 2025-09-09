@@ -1,0 +1,61 @@
+.filters {
+  display: flex;
+  gap: 1.25rem;
+  padding-top: 7rem;
+}
+
+#filter-genre,
+#filter-format,
+#filter-lang {
+  width: 7rem;
+  height: 2.3rem;
+  background-color: #202020;
+  color: #ffffff;
+  font-family: "Heeboo-regular";
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+}
+
+#filter-genre:hover,
+#filter-format:hover,
+#filter-lang:hover {
+  background-color: #353535;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.search-container {
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  text-align: center;
+  width: 15rem;
+  height: 2.3rem;
+  padding: 0.7rem 1.5rem;
+}
+
+#search-film {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: "Heeboo-regular";
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#search-film:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.loupe {
+  width: 21px;
+  height: 21px;
+}
+
+@media screen and (min-width: 1900px) {
+}

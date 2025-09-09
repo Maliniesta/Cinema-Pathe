@@ -1,0 +1,73 @@
+.resume {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  gap: 0;
+}
+.total-zone {
+  bottom: 0;
+  height: 3.5rem;
+  background-color: #ffdc7d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.total-info {
+  display: flex;
+  gap: 20rem;
+  padding-left: 5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.recap-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 5rem;
+}
+
+.total-prix {
+  font-family: "Heeboo-bold";
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1c2129;
+}
+
+.recap-item {
+  display: flex;
+  justify-content: space-between; /* label à gauche, prix à droite */
+  align-items: center; /* bien aligné verticalement */
+  margin-bottom: 0.5rem; /* petit espace entre les lignes */
+}
+
+.recap-label {
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1rem;
+
+  color: #1c2129;
+}
+
+.recap-prix {
+  flex-shrink: 0;
+  text-align: right;
+  min-width: 70px;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-family: "Heeboo-bold";
+  font-weight: 700;
+  color: #1c2129;
+}
+
+.recap-liste {
+  width: 67%;
+}

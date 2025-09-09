@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paiement sécurisé - Pathé Cinéma</title>
+    <meta
+      name="description"
+      content="Finalisez votre réservation Pathé Cinéma en toute sécurité. Choisissez votre mode de paiement et confirmez votre commande."
+    />
+    <meta
+      name="keywords"
+      content="Paiement cinéma, Pathé Cinéma, réservation, carte bancaire, Google Pay, paiement sécurisé"
+    />
+    <link
+      rel="icon"
+      href="/assets/images/logo/logo_pathe_white.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/pages/paiement.css" />
+  </head>
+  <body>
+    <div class="container-fixed">
+      <header>
+        <nav class="navbar">
+          <div class="nav-left">
+            <ul>
+              <li><a href="../index.html">Accueil</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="catalogue.html">Choisir une séance</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="places.html">Vos places</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="tarifs.html">Tarifs</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="snack.html">Snacks</a></li>
+              <img
+                src="/assets/images/pictos/fleche.png"
+                class="arrow-right"
+                alt="suivant"
+              />
+              <li><a href="paiement.html">Paiement</a></li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <button class="secondary-btn">
+              <a href="snack.html">
+                <img
+                  src="/assets/images/pictos/fleche.png"
+                  class="arrow-left"
+                  alt="Retour"
+                />
+                Retour
+              </a>
+            </button>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <main class="reservation-page">
+      <!-- Colonne gauche -->
+      <section class="film-summary">
+        <div class="film-overlay">
+          <img
+            src="/assets/images/logo/logo_pathe_white.png"
+            alt="Logo Pathé Cinéma"
+            class="logo-white"
+          />
+          <img class="film-image" src="" alt="Affiche du film réservé" />
+          <div class="change-film-container">
+            <h3 class="film-title"></h3>
+          </div>
+          <p class="seance-info"></p>
+        </div>
+      </section>
+
+      <!-- Colonne droite -->
+      <section class="salle-container">
+        <div class="infos-salle-handicap"></div>
+        <h4 class="paiement-title">Paiement sécurisé</h4>
+
+        <div class="payment-form">
+          <h5 class="form-title">Choisir mon mode de paiement</h5>
+
+          <div class="card-section">
+            <div class="card-header">
+              <span class="card-label">Carte bancaire</span>
+              <div class="card-icons">
+                <img
+                  src="/assets/images/logo/cb.jpg"
+                  class="banque-img"
+                  alt="Carte bancaire acceptée"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cardNumber">Numéro de carte</label>
+              <input
+                type="text"
+                id="cardNumber"
+                class="card-number-input"
+                placeholder="0000 0000 0000 0000"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiry">Date d'expiration</label>
+                <input type="text" id="expiry" placeholder="MM/AA" />
+              </div>
+              <div class="form-group">
+                <label for="cvv">Cryptogramme</label>
+                <input type="text" id="cvv" placeholder="123" />
+              </div>
+            </div>
+          </div>
+
+          <div class="google-pay-section">
+            <span class="google-pay-label">Google Pay</span>
+            <div class="google-pay-logo">
+              <img
+                src="/assets/images/logo/gpay.png"
+                class="gpay-img"
+                alt="Paiement via Google Pay"
+              />
+            </div>
+          </div>
+
+          <!-- Total et continuer -->
+          <div class="total-zone">
+            <div class="total-info">
+              <span>Total à régler</span>
+              <span class="total-prix">0.00€</span>
+            </div>
+            <button class="continue-btn">
+              Valider votre paiement
+              <img
+                src="/assets/images/pictos/fleche-droite.png"
+                alt="Confirmer paiement"
+                class="fleche-droite"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/paiement.js" defer></script>
+  </body>
+</html>

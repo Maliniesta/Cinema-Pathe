@@ -1,0 +1,172 @@
+.hero-btn {
+  margin-left: 1rem;
+}
+
+.primary-btn {
+  width: 26.5rem;
+  height: 4rem;
+  border-radius: 15px;
+  background-color: #feb91e;
+  color: #0c0c0c;
+  font-size: 1.3rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.primary-btn:hover {
+  transform: scale(1.1);
+}
+
+.secondary-btn,
+.secondary-btn a {
+  background-color: #202020;
+  width: 7rem;
+  height: 2.3rem;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: "Heeboo-regular";
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #feb91e;
+  color: #181818;
+  border: none;
+  font-family: "Heeboo-bold";
+  font-weight: 800;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 3rem;
+}
+
+.confirm-btn:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.change-btn {
+  background-color: #61646a;
+  width: 123px;
+  height: 31px;
+  border-radius: 21px;
+  font-family: "Heeboo-bold";
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ajouter-btn {
+  background-color: #202020;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: "Heeboo-regular";
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  height: 1.65rem;
+  width: 5.2rem;
+}
+
+.modif-btn {
+  font-family: "Heeboo-bold";
+  font-weight: 800;
+  width: 9.5rem;
+  height: 1.9rem;
+  border-radius: 21px;
+}
+
+.image-moins-btn,
+.image-plus-btn {
+  width: 17px;
+  height: 17px;
+}
+
+.moins-btn,
+.plus-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.continue-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #feb91e;
+  border: none;
+  font-family: "Heeboo-bold";
+  font-weight: 800;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 100%;
+  width: 13.7rem;
+  color: #181818;
+}
+
+.continue-btn:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.continue-btn:hover {
+  background-color: green;
+}
+
+.supprimer-btn {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #feb91e;
+  border-radius: 15px;
+  border: none;
+  position: absolute;
+  left: 6.25rem;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1900px) {
+  .confirm-btn {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 4rem;
+  }
+}

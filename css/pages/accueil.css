@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Heeboo-regular";
+  src: url("/assets/fonts/Heebo-Regular.ttf");
+}
+@font-face {
+  font-family: "Heeboo-extra-bold";
+  src: url("/assets/fonts/Heebo-ExtraBold.ttf");
+}
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.7s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  font-family: "Heeboo-regular";
+}
+
+.logo-container {
+  position: absolute;
+  left: 2.875rem;
+  top: 3.938rem;
+}
+
+.hero {
+  position: fixed;
+  left: 5rem; /* Distance du bord gauche */
+  top: 19rem; /* Distance du bas */
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 31rem;
+}
+
+@media screen and (min-width: 1900px) {
+  .hero {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centre parfaitement */
+    width: 31rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .hero {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centre parfaitement */
+    width: 31rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}

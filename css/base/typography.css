@@ -1,0 +1,36 @@
+h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 300;
+  line-height: 100%;
+}
+.bold {
+  font-family: "Heeboo-extra-bold";
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.07rem;
+}
+
+h3 {
+  font-family: "heeboo-bold";
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h4 {
+  font-family: "heeboo-bold";
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1c2129;
+}
+
+h5 {
+  font-family: "heeboo-bold";
+  font-size: 1.1rem;
+  font-weight: 700;
+}

@@ -1,0 +1,86 @@
+.logo-white {
+  height: 81px;
+  width: 107px;
+}
+
+.billet {
+  width: 22.5px;
+  height: 22.5px;
+}
+
+.film-image {
+  height: 258px;
+  width: 172px;
+}
+
+.tag-image {
+  width: 80px;
+  height: 30px;
+}
+
+.pictos {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+}
+
+.w-handicap {
+  width: 20px;
+  height: 20px;
+  filter: invert(38%) sepia(6%) saturate(250%) hue-rotate(180deg)
+    brightness(95%) contrast(90%);
+}
+
+.fleche-droite {
+  width: 34px;
+  height: 34px;
+}
+
+.legende-siege {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-position: center;
+}
+
+.b-handicap {
+  width: 13px;
+  height: 13px;
+  filter: brightness(0) saturate(100%);
+}
+
+.cinepass-icon {
+  width: 55px;
+  height: 75px;
+  position: absolute;
+  left: -30px;
+  top: -10px;
+}
+
+.icone-supprimer {
+  width: 12px;
+  height: 11px;
+}
+
+.snack-img {
+  width: 50px;
+  height: 60px;
+}
+
+.qr-code {
+  height: 80px;
+  width: 80px;
+}
+
+.banque-img {
+  width: 140px;
+  height: 30px;
+}
+
+.gpay-img {
+  width: 35px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

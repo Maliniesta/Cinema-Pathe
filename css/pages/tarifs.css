@@ -1,0 +1,90 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.salle-container {
+  background-color: #f2f2f2;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cinepass-zone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #ffdc7d;
+  height: 3.5rem;
+  width: 31.6rem;
+  border-radius: 14px;
+  position: relative;
+  padding: 2rem;
+  overflow: visible;
+}
+
+.cinepass-input {
+  min-width: 15.6rem;
+  font-family: "Heeboo-bold";
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #202020;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.tarifs-selection {
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem;
+}
+
+.tarif-promo-1,
+.tarif-promo-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #1c2129;
+  font-family: "Heeboo-bold";
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.tarif-nom {
+  font-weight: bold;
+}
+
+.tarif-ligne {
+  flex-grow: 1; /* prend tout l'espace dispo */
+  height: 0.06rem;
+  background-color: #e4e4e4;
+  border-radius: 2px;
+}
+
+.tarif-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tarif-count {
+  font-family: "Heeboo-bold";
+  font-size: 1.2rem;
+  color: #d9d9d9;
+}
+
+@media screen and (min-width: 1900px) {
+  .salle-container {
+    gap: 6rem;
+  }
+  .cinepass-zone {
+    width: 40rem;
+    padding: 4rem;
+  }
+}

@@ -1,0 +1,61 @@
+.nav-left {
+  visibility: hidden;
+}
+
+.salle-container {
+  background-color: #f0f0f0;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0;
+}
+
+.ticket-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticket-body {
+  background-image: url("../../assets/images/logo/logo-pathé-yellow.jpg"); /* adapte le chemin */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 350px 250px;
+  background-color: #ffffff;
+  filter: grayscale(60%) brightness(1.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 2rem;
+  font-family: "Hepta-bold";
+}
+
+.qr-section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* ← pousse le QR code à droite */
+}
+
+.film-title {
+  font-size: 1.31rem;
+  font-weight: 700;
+  padding-bottom: 0.3rem;
+}
+
+.cinema-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ticket-row {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.footer-message {
+  color: #6a6a6a;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+}

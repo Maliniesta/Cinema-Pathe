@@ -1,0 +1,102 @@
+.sieges {
+  max-height: 31rem; /* hauteur visible */
+  overflow-y: auto; /* scroll vertical */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.places-disponibles {
+  color: #666666;
+  padding-bottom: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* 🧱 Organisation des rangées */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.bloc {
+  display: flex;
+  gap: 0.23rem;
+}
+
+.bloc.gauche,
+.bloc.droite {
+  width: 100%;
+}
+
+.bloc.centre {
+  margin: 0 1.25rem;
+}
+
+.handicap-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+/* 🎟️ Sièges individuels */
+.seat {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.seat.available {
+  background-image: url("../../assets/images/pictos/siege-jaune.png");
+  border-color: #f59e0b;
+}
+
+.seat.available:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+.seat.reserved {
+  background-image: url("../../assets/images/pictos/siege-gris.png");
+  border-color: #6b7280;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.seat.selected {
+  background-image: url("../../assets/images/pictos/siege-vert.png");
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+.seat.handicap {
+  background-image: url("../../assets/images/pictos/y_handicap.png");
+  border-color: #f59e0b;
+}
+
+.seat.handicap:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+  cursor: pointer;
+}
+
+.seat.placeholder {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 1900px) {
+  .sieges {
+    max-height: none;
+    overflow-y: hidden;
+  }
+}
