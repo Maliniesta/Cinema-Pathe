@@ -1,5 +1,5 @@
 @import url("./base/general.css");
-@import url("./base/typography.css");
+@import url("base/typography.css");
 
 @import url("./components/buttons.css");
 @import url("./components/image.css");
