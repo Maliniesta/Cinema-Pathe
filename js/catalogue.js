@@ -1,7 +1,7 @@
 // =====================================================
 // 1. Chargement du fichier JSON contenant la liste des films
 // =====================================================
-fetch("../../JSON/films.json")
+fetch("../JSON/films.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Erreur lors du chargement du fichier JSON");
