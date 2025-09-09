@@ -89,22 +89,22 @@ a {
 
   @font-face {
     font-family: "Heeboo-regular";
-    src: url("/Cinema-Pathe/assets/fonts/Heebo-Regular.ttf");
+    src: url("https://Maliniesta.github.io/Cinema-Pathe/assets/fonts/Heebo-Regular.ttf");
   }
 
   @font-face {
     font-family: "Heeboo-bold";
-    src: url("/Cinema-Pathe/assets/fonts/Heebo-Bold.ttf");
+    src: url("https://Maliniesta.github.io/Cinema-Pathe/assets/fonts/Heebo-Bold.ttf");
   }
 
   @font-face {
     font-family: "Heeboo-extrabold";
-    src: url("/Cinema-Pathe/assets/fonts/Heebo-ExtraBold.ttf");
+    src: url("https://Maliniesta.github.io/Cinema-Pathe/assets/fonts/Heebo-ExtraBold.ttf");
   }
 
   @font-face {
     font-family: "Hepta-bold";
-    src: url("/Cinema-Pathe/assets/fonts/HeptaSlab-Bold.ttf");
+    src: url("https://Maliniesta.github.io/Cinema-Pathe/assets/fonts/HeptaSlab-Bold.ttf");
   }
   body {
     font-family: "Heeboo-regular";
