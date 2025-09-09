@@ -52,6 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (seanceInfo) {
     seanceInfo.innerHTML = `Séance <div class="seance-details">${data.horaire} ${data.version}<div class="film-fin">Fin prévue à ${data.finPrevue}</div></div>`;
   }
+  if (infosSalleHandicap) {
+    infosSalleHandicap.innerHTML = ""; // Force l'effacement
+    infosSalleHandicap.style.display = "none"; // Cache complètement
+  }
 
   if (siegesListe)
     siegesListe.textContent = data.sieges.map((s) => s.label).join(", ");
