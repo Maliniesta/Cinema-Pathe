@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ⚡ Charger les snacks depuis JSON et créer les boutons +/−
   if (snackContainer) {
-    fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/snack.json")
+    fetch("./JSON/snack.json")
       .then((r) => {
         if (!r.ok) throw new Error("Erreur chargement snack.json");
         return r.json();
