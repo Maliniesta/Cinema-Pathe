@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (infosSalleHandicap) {
     infosSalleHandicap.innerHTML = `<p>Salle : ${data.salle}</p>${
       data.handicap
-        ? `<img src="../../assets/images/pictos/w_handicap.png" alt="Accès handicapé" class="b-handicap">`
+        ? `<img src="/Cinema-Pathe/assets/images/pictos/w_handicap.png" alt="Accès handicapé" class="b-handicap">`
         : ""
     }`;
   }
