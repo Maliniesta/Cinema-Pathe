@@ -14,7 +14,7 @@ function showBg() {
   document.body.style.backgroundImage = `url('${images[idx]}')`;
   document.body.style.backgroundSize = "100vw 100vh"; // Forcer la taille
 }
-
+// modulo pour boucler l'image
 function nextBg() {
   idx = (idx + 1) % images.length;
   showBg();
@@ -23,5 +23,5 @@ function nextBg() {
 // Affiche la première image
 showBg();
 
-// Change d'image toutes les 5 secondes
+// Change d'image toutes les 2 secondes
 setInterval(nextBg, 2000);

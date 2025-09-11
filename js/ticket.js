@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // === Affichage infos film ===
+  // Affichage info film
   const filmTitle = document.querySelector(".film-title");
   const filmImage = document.querySelector(".film-image");
   const filmSummary = document.querySelector(".left-container");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     siegesListe.textContent = data.sieges.map((s) => s.label).join(", ");
   }
 
-  // === Remplir les informations du ticket dans .ticket-container ===
+  // Remplissage des infos du ticket
 
   // Titre du film
   const filmTitleEl = document.getElementById("filmTitle");

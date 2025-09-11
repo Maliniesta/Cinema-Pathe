@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Récupération de la réservation
+  // Récupération des donnée de réservation
   let data =
     JSON.parse(localStorage.getItem("reservationFinale")) ||
     JSON.parse(localStorage.getItem("reservationComplete"));
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalPrixEl = document.querySelector(".total-prix");
   const continueBtn = document.querySelector(".continue-btn");
 
-  // Initialisation affichage film
+  // affichage details du film
   if (filmTitleEl) filmTitleEl.textContent = data.filmTitre || "";
   if (filmImageEl) filmImageEl.src = data.image || "";
   if (filmSummaryEl && data.image)
@@ -35,12 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (siegesListeEl && data.sieges)
     siegesListeEl.textContent = data.sieges.map((s) => s.label).join(", ");
 
-  // ⚡ Gestion des snacks
+  //  Gestion des snacks
   let snacksSelectionnes = [];
 
+  // Initialise le tableau des snacks sélectionnés à partir des données sauvegardées
+  // Gère le cas où les données sont soit un tableau, soit un objet a cause du local storage
+  //prepare les donnee du snack
   function initSnacks() {
     const items = data.snacks?.items;
     if (!items) return;
+    //verifie que item est un tableau
     if (Array.isArray(items)) {
       snacksSelectionnes = items.map((it) => ({
         nom: it.nom,
@@ -57,11 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
         };
       });
     }
-    console.log("Snacks initialisés :", snacksSelectionnes);
   }
 
+  // Met à jour l’affichage de la quantité choisie pour un snack donné
   function updateSnackQtyDisplay(nom) {
     const el = document.querySelector(
+      //permet de gerer les caracteres speciaux
       `[data-snack="${CSS.escape(nom)}"] .snack-count`
     );
     if (el) {
@@ -70,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Ajoute un snack au tableau snacksSelectionnes ou augmente sa quantité si déjà présent
+  // Puis met à jour l’affichage de la quantité et le récapitulatif
   function ajouterSnack(nom, prix, quantite = 1) {
     let s = snacksSelectionnes.find((s) => s.nom === nom);
     if (s) s.quantite += quantite;
@@ -92,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return snacksSelectionnes.reduce((sum, s) => sum + s.prix * s.quantite, 0);
   }
 
+  //on refai le calcul eds films
   function calcTotalFilm() {
     let total = 0;
     if (data.tarifs?.adulte)
@@ -167,17 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Total global
     const totalGlobal = calcTotalFilm() + calcTotalSnacks();
     if (totalPrixEl) totalPrixEl.textContent = `${totalGlobal.toFixed(2)}€`;
-    console.log(
-      "Total film:",
-      calcTotalFilm(),
-      "Total snacks:",
-      calcTotalSnacks(),
-      "Total global:",
-      totalGlobal
-    );
   }
 
-  // ⚡ Charger les snacks depuis JSON et créer les boutons +/−
+  //  Charger les snacks depuis JSON et créer les boutons +/−
   if (snackContainer) {
     fetch("https://maliniesta.github.io/Cinema-Pathe/JSON/snack.json")
       .then((r) => {
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // ⚡ Initialisation
+  // Initialisation
   initSnacks();
   afficherRecap();
 

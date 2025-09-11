@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 🔹 Récupération des données de réservation depuis le localStorage
+  //  Récupération du dernier localstorage
   const data = JSON.parse(localStorage.getItem("reservationComplete"));
 
   if (!data) {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 🔹 Fonction pour convertir les snacks en tableau uniforme
+  //  Fonction pour convertir les snacks en tableau uniforme
   function snacksToArray(items) {
     if (!items) return [];
     if (Array.isArray(items)) return items;
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return [];
   }
 
-  // 🔹 Sélection des éléments HTML pour affichage
+  // 🔹Sélection des éléments HTML pour affichage
   const filmTitle = document.querySelector(".film-title");
   const filmImage = document.querySelector(".film-image");
   const filmSummary = document.querySelector(".left-container");
@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const recapListe = document.querySelector(".recap-liste");
   const totalPrixEl = document.querySelector(".total-prix");
 
-  // 🔹 Formulaire paiement
+  //  Formulaire paiement
   const cardNumberInput = document.getElementById("cardNumber");
   const expiryInput = document.getElementById("expiry");
   const cvvInput = document.getElementById("cvv");
   const continueBtn = document.querySelector(".continue-btn");
 
-  // 🔹 Affichage des informations du film
+  //  Affichage des details du film
   if (filmTitle) filmTitle.textContent = data.filmTitre;
   if (filmImage) filmImage.src = data.image;
   if (filmSummary) {
@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     seanceInfo.innerHTML = `Séance <div class="seance-details">${data.horaire} ${data.version}<div class="film-fin">Fin prévue à ${data.finPrevue}</div></div>`;
   }
   if (infosSalleHandicap) {
-    infosSalleHandicap.innerHTML = ""; // Force l'effacement
-    infosSalleHandicap.style.display = "none"; // Cache complètement
+    infosSalleHandicap.innerHTML = "";
+    infosSalleHandicap.style.display = "none";
   }
 
   if (siegesListe)
@@ -125,14 +125,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return totalGlobal;
   }
 
-  // 🔹 Total final
+  //  Total final
   let totalFinal =
     data.prixTotalFinal && data.prixTotalFinal > 0
       ? data.prixTotalFinal
       : afficherRecap();
   if (totalPrixEl) totalPrixEl.textContent = `${totalFinal.toFixed(2)}€`;
 
-  // 🔹 Fonctions pour gérer les messages d'erreur
+  //  Fonctions pour gérer les messages d'erreur
   function afficherErreur(inputElement, message) {
     // Chercher s'il y a déjà un message d'erreur pour cet élément
     const existingError =
@@ -159,10 +159,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 🔹 Validation individuelle de chaque champ avec affichage d'erreur
+  //  Validation individuelle de chaque champ avec affichage d'erreur
   function validateCardNumber() {
     if (!cardNumberInput) return true;
 
+    //regex supprime les espace
     const cardValue = cardNumberInput.value.replace(/\s+/g, "");
 
     if (cardValue.length === 0) {
@@ -174,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Le numéro de carte doit contenir 16 chiffres"
       );
       return false;
+      //verifie que ce sont des chiffre
     } else if (!/^\d+$/.test(cardValue)) {
       afficherErreur(
         cardNumberInput,
@@ -223,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 🔹 Fonction globale de validation
+  //  Fonction globale de validation
   function validateInputs() {
     const isCardValid = validateCardNumber();
     const isExpiryValid = validateExpiry();
@@ -232,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return isCardValid && isExpiryValid && isCvvValid;
   }
 
-  // 🔹 Fonction pour activer/désactiver le bouton
+  //  Fonction pour activer/désactiver le bouton
   function updateButtonState() {
     if (continueBtn) {
       const isFormValid = validateInputs();
@@ -273,10 +275,10 @@ document.addEventListener("DOMContentLoaded", () => {
     cvvInput.addEventListener("blur", validateCVV);
   }
 
-  // 🔹 Validation initiale au chargement
+  //  Validation initiale au chargement
   updateButtonState();
 
-  // 🔹 Bouton continuer : si formulaire invalide, afficher une alerte
+  //  Bouton continuer : si formulaire invalide, afficher une alerte
   if (continueBtn) {
     continueBtn.addEventListener("click", (e) => {
       e.preventDefault();

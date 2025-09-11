@@ -2,13 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Récupération des données de réservation complètes (film + sièges)
   const data = JSON.parse(localStorage.getItem("reservationComplete"));
 
-  // Sécurité : si pas de données, retour au catalogue
   if (!data) {
     window.location.href = "catalogue.html";
     return;
   }
 
-  // === REMPLISSAGE DES INFORMATIONS FILM / SALLE ===
+  // affichage details du film
   const infosBloc = document.querySelector(".infos-salle-handicap");
   if (infosBloc) {
     infosBloc.innerHTML = `
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     siegesListe.textContent = data.sieges.map((s) => s.label).join(", ");
   }
 
-  // === TARIFS ===
+  // on definit les tarifs
   const adultePrix = 9.9;
   const moins14Prix = 6.5;
   let adulteCount = 0;
@@ -104,14 +103,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (totalPrix) totalPrix.textContent = `${total.toFixed(2)}€`;
   }
 
-  // === FONCTION POUR ACTIVER/DÉSACTIVER BOUTON CONTINUER ===
+  // activer et desactiver le bouton continuer
   function updateContinueButton() {
     if (!continuerBtn) return;
     continuerBtn.disabled =
       adulteCount + moins14Count !== nombrePlacesSelectionnees;
   }
 
-  // === BOUTONS PLUS / MOINS ===
   const plusAdulteBtn = document.querySelector(
     ".plus-btn[data-tarif='adulte']"
   );
@@ -124,8 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const moinsMoins14Btn = document.querySelector(
     ".moins-btn[data-tarif='moins14']"
   );
-
+  //?. verifie que le bouton existe
   plusAdulteBtn?.addEventListener("click", () => {
+    //on ne peut pas prendre plus de billet que de siege dispo
     if (adulteCount + moins14Count < nombrePlacesSelectionnees) {
       adulteCount++;
       document.querySelector(".tarif-count[data-tarif='adulte']").textContent =
@@ -165,13 +164,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === BOUTON MODIFIER VOS PLACES ===
+  // bouton modifier les places
   const modifBtn = document.querySelector(".modif-btn");
   modifBtn?.addEventListener("click", () => {
     window.location.href = "places.html";
   });
 
-  // === BOUTON CONTINUER ===
+  // bouton continuer
   continuerBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     if (adulteCount + moins14Count === nombrePlacesSelectionnees) {
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
         0,
         adulteCount * adultePrix + moins14Count * moins14Prix - reductionPromo
       );
-
+      //creation de l objet de reservation
       const reservationFinale = {
         ...data,
         tarifs: {
@@ -205,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === GESTION CODE PROMO / CINEPASS ===
+  // Gestion code promo
   const ajouterBtn = document.querySelector(".ajouter-btn");
   ajouterBtn?.addEventListener("click", () => {
     const codeInput = document.querySelector(".cinepass-input");
@@ -227,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === INITIALISATION ===
+  // mise a jour prix et btn
   mettreAJourRecap();
   updateContinueButton();
 });

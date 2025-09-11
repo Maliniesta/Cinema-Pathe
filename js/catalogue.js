@@ -1,6 +1,4 @@
-// =====================================================
-// 1. Chargement du fichier JSON contenant la liste des films
-// =====================================================
+// Chargement du fichier json
 fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
   .then((response) => {
     if (!response.ok) {
@@ -10,15 +8,11 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
   })
 
   .then((films) => {
-    // =====================================================
-    // 2. Déclaration des variables principales
-    // =====================================================
+    // déclaration des variables pour afficher les films
     const container = document.querySelector(".films-container"); // Zone où on affiche les films
-    let allFilms = films; // On garde la liste complète pour appliquer les filtres
+    let allFilms = films; // liste complete de film pour les filtre
 
-    // =====================================================
-    // 3. Fonction qui affiche les films
-    // =====================================================
+    // Fonction qui va afficher les films
     function renderFilms(filmsToRender) {
       container.innerHTML = ""; // On vide l'affichage avant de le remplir
 
@@ -26,7 +20,6 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
         const filmCard = document.createElement("div");
         filmCard.classList.add("film-card");
 
-        // --- 3.1 Ajout d’un tag (nouveau ou frisson) ---
         let tagImage = "";
         if (film.mention_frisson) {
           tagImage = `<img src="../assets/images/pictos/frisson.png" alt="Frisson" class="tag-image">`;
@@ -34,7 +27,6 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
           tagImage = `<img src="../assets/images/pictos/nouveau.jpg" alt="Nouveau" class="tag-image">`;
         }
 
-        // --- 3.2 Ajout des pictos (-12 ans, violence, etc.) ---
         let pictos = "";
         if (film.âge_minimum >= 12) {
           pictos += `<img src="../assets/images/pictos/-12ans.png" alt="-12" class="pictos">`;
@@ -43,12 +35,16 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
           pictos += `<img src="../assets/images/pictos/violence.jpg" alt="Violence" class="pictos">`;
         }
 
-        // --- 3.3 Calcul de la durée affichée ---
+        // Calcul de la duréé du films
+        //divise par soixante pour avoir le nombre d'heure
+        //arrondi le nombre vers le bas
+        //modulo pour les minutes restantes
+        //convertis en string
         const duree = `(${Math.floor(film.durée_minutes / 60)}h${
           film.durée_minutes % 60
         })`;
 
-        // --- 3.4 Construction de la liste des séances ---
+        //Liste des séances
         let seancesHTML = '<div class="seance-container">';
 
         film.séances.forEach((seance) => {
@@ -68,7 +64,7 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
             ? '<img src="../assets/images/pictos/w_handicap.png" alt="Handicapé" class="w-handicap">'
             : "";
 
-          // Lien séance (cliquable vers places.html)
+          // Lien séance
           seancesHTML += `
             <a href="places.html" 
                class="seance" 
@@ -92,7 +88,7 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
 
         seancesHTML += "</div>";
 
-        // --- 3.5 Construction de la carte film ---
+        // seance-card
         filmCard.innerHTML = `
           <div class="film-content">
             <div class="film-affiche">
@@ -118,9 +114,7 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
         container.appendChild(filmCard);
       });
 
-      // =====================================================
-      // 4. Listeners sur les séances (sauvegarde en localStorage)
-      // =====================================================
+      //Listener sur les seance et dataset pour afficher directement
       document.querySelectorAll(".seance").forEach((seanceEl) => {
         seanceEl.addEventListener("click", () => {
           const filmTitre = seanceEl.dataset.film;
@@ -131,11 +125,12 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
           const salle = seanceEl.dataset.salle;
           const handicap = seanceEl.dataset.handicap === "true";
 
-          // Durée du film pour calcul de fin
+          // Durée du film pour calcul de fin, on commence par chercher le film dans le tableau
+          //si film est undifend il ne provoque pas d erreur et renvoi 0
           const film = films.find((f) => f.titre === filmTitre);
           const dureeMinutes = film?.durée_minutes || 0;
 
-          // Conversion horaire → Date
+          // Conversion horaire en Date
           const [heures, minutes] = horaire.split(":").map(Number);
           const dateDebut = new Date();
           dateDebut.setHours(heures);
@@ -167,9 +162,7 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
       });
     }
 
-    // =====================================================
-    // 5. Gestion des filtres
-    // =====================================================
+    // Gestion des filtres
     const genreSelect = document.getElementById("filter-genre");
     const formatSelect = document.getElementById("filter-format");
     const langSelect = document.getElementById("filter-lang");
@@ -182,7 +175,7 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
       const lang = langSelect.value.toLowerCase();
       const search = searchInput.value.toLowerCase();
 
-      // Si "Qualitée" est sélectionné → pas de filtre
+      // Si "Qualitée" est sélectionné alors pas de filtre
       if (format === "qualitée") format = "";
 
       // Filtrage
@@ -211,7 +204,7 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
           if (!hasLang) return false;
         }
 
-        // Recherche (titre)
+        // Recherche de titre
         if (search && !film.titre.toLowerCase().includes(search)) {
           return false;
         }
@@ -229,15 +222,11 @@ fetch("https://Maliniesta.github.io/Cinema-Pathe/JSON/films.json")
     langSelect.addEventListener("change", applyFilters);
     searchInput.addEventListener("input", applyFilters);
 
-    // =====================================================
-    // 6. Affichage initial (tous les films)
-    // =====================================================
+    // Affichage tout les films
     renderFilms(allFilms);
   })
 
-  // =====================================================
-  // 7. Gestion des erreurs de chargement
-  // =====================================================
+  // Gestion des erreur
   .catch((error) => {
-    console.error("Erreur :", error);
+    console.error("Problème avec le fichier JSON des films :", error);
   });

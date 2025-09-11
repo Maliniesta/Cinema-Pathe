@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === Récupération des données de réservation depuis la page précédente ===
+  // Recuperation de  la reservation du localstorage
   const data = JSON.parse(localStorage.getItem("reservation"));
   if (!data) {
     // Si aucune réservation, on retourne au catalogue
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // === Affichage des infos du film ===
+  // Affichage des details du film
   document.querySelector(".film-image").src = data.image;
   document.querySelector(".film-title").textContent = data.filmTitre;
   document.querySelector(
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   `;
 
-  // === Création dynamique de la salle de cinéma ===
+  // Création de la salle de cinema
   const salleContainer = document.querySelector(".right-container");
   const siegesContainer = document.querySelector(".sieges");
   siegesContainer.innerHTML = "";
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   placesDisponibles.className = "places-disponibles";
   salleContainer.insertBefore(placesDisponibles, siegesContainer);
 
-  // === Génération des rangées et des sièges ===
+  // boucle sur les rangé
   for (let rangee = 0; rangee < nombreRangees; rangee++) {
     const row = document.createElement("div");
     row.classList.add("row");
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Rangée spéciale handicap
       const blocDiv = document.createElement("div");
       blocDiv.classList.add("bloc", "handicap-row");
-
+      //Attribution de numero a chaque siege handicapé
       for (let i = 0; i < 6; i++) {
         const seat = document.createElement("div");
         seat.classList.add("seat", "handicap", "available");
@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let siege = 0; siege < bloc.nombre; siege++) {
           const seat = document.createElement("div");
           seat.classList.add("seat");
-
+          //attribution d id unique a chaque siege
           const numeroSiege = rangee * 16 + blocIndex * 100 + siege + 1;
           seat.dataset.siegeId = numeroSiege;
           seat.dataset.rangee = String.fromCharCode(65 + rangee);
           seat.dataset.numero = siege + 1;
 
-          // Si aléatoire < 0.1, siège réservé
+          // siege reserver aléatoire avec 10% de chance qu il soit reserver
           const random = Math.random();
           seat.classList.add(random < 0.1 ? "reserved" : "available");
 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     siegesContainer.appendChild(row);
   }
 
-  // === Ajout des placeholders sur certaines positions pour esthétique ===
+  // Ajout de placeholder pour cacher certains siege (last et first pour cibler les siege )
   const toutesLesRangees = siegesContainer.querySelectorAll(".row");
   const derniereRangee = toutesLesRangees[toutesLesRangees.length - 1];
   const blocGauche = derniereRangee.querySelector(".bloc.gauche");
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
   blocDroite && remplacerParPlaceholder(blocDroite, "last");
   blocGauche && remplacerParPlaceholder(blocGauche, "first");
 
-  // === Barre du bas avec légende et bouton de confirmation ===
+  // Barre du bas
   const bottomBar = document.createElement("div");
   bottomBar.className = "bottom-bar";
   bottomBar.innerHTML = `
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const listeElement = bottomBar.querySelector(".sieges-liste");
   const btnConfirmer = bottomBar.querySelector("#confirmerBtn");
 
-  // === Gestion de la sélection des sièges ===
+  // Selection des siege
   salleContainer.querySelectorAll(".seat").forEach((seat) => {
     seat.addEventListener("click", () => {
       if (
@@ -161,19 +161,19 @@ document.addEventListener("DOMContentLoaded", () => {
         seat.classList.contains("placeholder")
       )
         return;
-
+      //recuperation de l id
       const id = parseInt(seat.dataset.siegeId);
       const label = `${seat.dataset.rangee}${seat.dataset.numero}`;
 
       if (seat.classList.contains("selected")) {
-        // Si déjà sélectionné → on le remet comme avant
+        // Si déjà sélectionné  on le remet comme avant
         seat.classList.remove("selected");
         seat.classList.add("available");
 
         if (seat.classList.contains("handicap")) {
           seat.classList.add("handicap");
         }
-
+        //on retire le siege selectionné du tableau
         siegesSelectionnes = siegesSelectionnes.filter((s) => s.id !== id);
       } else {
         if (seat.classList.contains("handicap")) {
@@ -190,13 +190,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // === Mise à jour de la barre d'information ===
+  // Mise a jour siege selectionné
   function mettreAJourSelection() {
     compteurElement.textContent = siegesSelectionnes.length;
     listeElement.textContent =
       siegesSelectionnes.length > 0
         ? siegesSelectionnes
+            //recupere
             .map((s) => s.label)
+            //trie
             .sort()
             .join(", ")
         : "-";
@@ -207,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
     placesDisponibles.textContent = `${totalLibres} places libres`;
   }
 
-  // === Confirmation des places sélectionnées ===
+  // Créationd un objet avec les data
   btnConfirmer.addEventListener("click", () => {
     const reservationComplete = {
       ...data,
