@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".seance-info"
   ).innerHTML = `Séance <div class="seance-details">${data.horaire} &nbsp;${data.version} <div class="film-fin">Fin prévue à ${data.finPrevue}</div></div>`;
   document.querySelector(
-    ".film-summary"
+    ".left-container"
   ).style.backgroundImage = `url(${data.image})`;
 
   // Infos salle et handicap
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
   // === Création dynamique de la salle de cinéma ===
-  const salleContainer = document.querySelector(".salle-container");
+  const salleContainer = document.querySelector(".right-container");
   const siegesContainer = document.querySelector(".sieges");
   siegesContainer.innerHTML = "";
 

@@ -1,4 +1,22 @@
 body {
   background-color: #090a0b;
   font-family: "Heeboo-regular";
+  position: relative;
+}
+
+.back-to-top {
+  background-color: #feb91e;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 3rem;
+  right: 5rem;
+}
+
+.flèche-haut {
+  border-radius: 50%;
+  padding: 10px;
+  transform: rotate(-90deg);
+  height: 50px;
+  width: 50px;
 }

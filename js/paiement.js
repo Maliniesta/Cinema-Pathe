@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🔹 Sélection des éléments HTML pour affichage
   const filmTitle = document.querySelector(".film-title");
   const filmImage = document.querySelector(".film-image");
-  const filmSummary = document.querySelector(".film-summary");
+  const filmSummary = document.querySelector(".left-container");
   const seanceInfo = document.querySelector(".seance-info");
   const infosSalleHandicap = document.querySelector(".infos-salle-handicap");
   const siegesListe = document.querySelector(".sieges-liste");

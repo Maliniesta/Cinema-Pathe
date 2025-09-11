@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  const filmSummary = document.querySelector(".film-summary");
+  const filmSummary = document.querySelector(".left-container");
   if (filmSummary) filmSummary.style.backgroundImage = `url(${data.image})`;
 
   const siegesListe = document.querySelector(".sieges-liste");

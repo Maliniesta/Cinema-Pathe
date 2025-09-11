@@ -1,8 +1,9 @@
-.salle-container {
+.right-container {
   background-color: #f0f0f0;
   align-items: center;
   gap: 1rem;
   width: 100%;
+  padding-top: 5rem;
 }
 
 .payment-form {
@@ -124,7 +125,7 @@ input::placeholder {
 }
 
 @media screen and (min-width: 1900px) {
-  .salle-container {
+  .right-container {
     gap: 8rem;
   }
 }

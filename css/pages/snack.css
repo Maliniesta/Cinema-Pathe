@@ -1,4 +1,4 @@
-.salle-container {
+.right-container {
   background-color: #ffffff;
   justify-content: center;
   align-items: center;
@@ -116,7 +116,7 @@
     overflow-y: hidden;
     height: 100rem;
   }
-  .salle-container {
+  .right-container {
     gap: 4rem;
   }
 }
